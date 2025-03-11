@@ -1,8 +1,7 @@
-package com.project.cyberedge.dto.core;
+package com.project.cyberedge.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
-
 import java.time.LocalDateTime;
 
 @Getter
