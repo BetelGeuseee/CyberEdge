@@ -43,7 +43,7 @@ public class CourseAPI {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<ApiResponse<Void>> getAllCourses(@PathVariable Integer id) {
+    public ResponseEntity<ApiResponse<Void>> deleteCourse(@PathVariable Integer id) {
         courseService.deleteCourse(id);
         ApiResponse<Void> response = ApiResponse.<Void>builder()
                 .success(true)
