@@ -30,7 +30,7 @@ public class SecurityFilterChainConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Stateless session
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/**").permitAll()
-                        .requestMatchers("/student/**").hasAnyAuthority("STUDENT","ADMIN")
+                        .requestMatchers("/student/**").hasAnyAuthority("STUDENT","ADMIN","INSTRUCTOR")
                         .requestMatchers("/instructor/**").hasAnyAuthority("INSTRUCTOR","ADMIN")
                         .requestMatchers("/admin/**").hasAuthority("ADMIN")
                         .anyRequest().authenticated()
