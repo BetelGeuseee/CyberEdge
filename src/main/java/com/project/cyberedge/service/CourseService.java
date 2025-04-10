@@ -38,9 +38,7 @@ public class CourseService {
             List<User> instructors = userRepository.findAllById(courseRequest.getInstructorIds());
             List<InstructorCourse> instructorCourses = instructors.stream().map(instructor-> new InstructorCourse(savedCourse,instructor))
                     .toList();
-            instructors.forEach(instructor -> {
-               instructorCourseRepository.saveAll(instructorCourses);
-            });
+            instructorCourseRepository.saveAll(instructorCourses);
         }
     }
 
