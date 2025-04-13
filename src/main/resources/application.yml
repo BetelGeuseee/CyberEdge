@@ -1,7 +1,7 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/cyberedge_db
-    username: postgres
+    username: pandey
     password: root123
     driver-class-name: org.postgresql.Driver
 
@@ -26,3 +26,6 @@ spring:
 jwt:
   secret: 2b44b0b00fd822d8ce753e54dac3dc4e06c2725f7db930f3b9924468b53194dbccdbe23d7baa5ef5fbc414ca4b2e64700bad60c5a7c45eaba56880985582fba4
   expiration: 36000000
+
+server:
+  port: 8081
