@@ -25,5 +25,4 @@ public class Project extends AbstractEntity{
     @Column(name = "is_active")
     private Boolean isActive;
 
-
 }

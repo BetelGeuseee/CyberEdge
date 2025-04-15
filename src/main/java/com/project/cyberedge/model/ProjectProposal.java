@@ -14,15 +14,22 @@ import lombok.Setter;
 @Setter
 public class ProjectProposal extends AbstractEntity {
 
-
-
     @ManyToOne
     @JoinColumn(name = "project_id",
             nullable = false,
             foreignKey = @ForeignKey(name = "fk_project", value = ConstraintMode.CONSTRAINT))
     private Project project;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id",
+            nullable = false,
+            foreignKey = @ForeignKey(name = "fk_user", value = ConstraintMode.CONSTRAINT))
+    private User member;
+
     @Column(name = "propsal_path")
     private String proposalPath;
+
+    @Column(name = "is_active")
+    private Boolean isActive;
 
 }
