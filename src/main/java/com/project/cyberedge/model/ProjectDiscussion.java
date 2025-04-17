@@ -14,7 +14,6 @@ import lombok.Setter;
 @Setter
 public class ProjectDiscussion extends AbstractEntity {
 
-
     @ManyToOne
     @JoinColumn(name = "project_id",
             nullable = false,
