@@ -1,7 +1,7 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/cyberedge_db
-    username: pandey
+    username: postgres
     password: root123
     driver-class-name: org.postgresql.Driver
 
@@ -29,3 +29,6 @@ jwt:
 
 server:
   port: 8081
+
+backend:
+  domain: http://localhost:8081 #use your custom domain in production

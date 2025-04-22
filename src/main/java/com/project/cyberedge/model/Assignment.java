@@ -29,5 +29,4 @@ public class Assignment extends AbstractEntity {
     private Boolean isActive;
 
 
-
 }

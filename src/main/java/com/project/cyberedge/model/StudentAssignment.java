@@ -28,9 +28,7 @@ public class StudentAssignment extends AbstractEntity {
     private Assignment assignment;
 
     @Column(name = "Assignment_path")
-    private String proposalPath;
+    private String assignmentPath;
 
-    @Column(name = "is_active")
-    private Boolean isActive;
 
 }
