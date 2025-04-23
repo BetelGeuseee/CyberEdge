@@ -6,6 +6,7 @@ import com.project.cyberedge.dto.ProjectDTO;
 import com.project.cyberedge.service.ProjectMemberService;
 import com.project.cyberedge.service.ProjectService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ import java.time.LocalDateTime;
 public class ProjectAPI {
     private final ProjectService projectService;
     private final ProjectMemberService projectMemberService;
+
 
     @PostMapping("create")
     public ResponseEntity<ApiResponse<Void>> create(@RequestBody ProjectDTO.ProjectRequest projectRequest) {
@@ -74,6 +76,18 @@ public class ProjectAPI {
                 .success(true)
                 .status(200)
                 .message("Project Deleted Successfully!")
+                .timestamp(LocalDateTime.now())
+                .build();
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping(path="publish",consumes = {MediaType.APPLICATION_JSON_VALUE,MediaType.MULTIPART_FORM_DATA_VALUE,MediaType.ALL_VALUE})
+    public ResponseEntity<ApiResponse<Void>> create(@ModelAttribute ProjectDTO.ProjectResourceRequest projectRequest) {
+        projectService.publish(projectRequest);
+        ApiResponse<Void> response = ApiResponse.<Void>builder()
+                .success(true)
+                .status(200)
+                .message("Project Resources uploaded successfully!")
                 .timestamp(LocalDateTime.now())
                 .build();
         return ResponseEntity.ok(response);

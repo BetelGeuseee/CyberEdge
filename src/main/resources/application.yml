@@ -1,9 +1,15 @@
 spring:
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 25MB
+
   datasource:
     url: jdbc:postgresql://localhost:5432/cyberedge_db
-    username: postgres
-    password: root123
+    username: pandey
+    password: pandey123
     driver-class-name: org.postgresql.Driver
+
 
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
@@ -32,3 +38,6 @@ server:
 
 backend:
   domain: http://localhost:8081 #use your custom domain in production
+
+
+
