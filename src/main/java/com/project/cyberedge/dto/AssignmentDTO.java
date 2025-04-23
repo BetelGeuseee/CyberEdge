@@ -51,7 +51,8 @@ public class AssignmentDTO {
 
        public static StudentAssignmentResponse from(User user, String assignmentPath){
            StudentAssignmentResponse studentAssignmentResponse = new StudentAssignmentResponse();
-           studentAssignmentResponse.setAssignmentPath(assignmentPath);
+
+           studentAssignmentResponse.setAssignmentPath("http://localhost:8081"+assignmentPath);
            studentAssignmentResponse.setStudent(UserDTO.UserResponseDTO.from(user));
 
            return studentAssignmentResponse;

@@ -34,6 +34,16 @@ public class ProjectDTO {
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
+    public static class ProjectResourceRequest {
+        private MultipartFile resourceFile;
+        private Integer projectId;
+
+    }
+
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class ProjectMemberRequest {
         private MultipartFile proposalFile;
         private Integer projectId;
